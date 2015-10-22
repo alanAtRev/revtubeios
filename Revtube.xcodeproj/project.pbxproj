@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4707F79F1BD95677008E3EC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F79E1BD95677008E3EC6 /* AppDelegate.swift */; };
-		4707F7A11BD95677008E3EC6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7A01BD95677008E3EC6 /* MasterViewController.swift */; };
-		4707F7A31BD95677008E3EC6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7A21BD95677008E3EC6 /* DetailViewController.swift */; };
 		4707F7A61BD95677008E3EC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4707F7A41BD95677008E3EC6 /* Main.storyboard */; };
 		4707F7A81BD95677008E3EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4707F7A71BD95677008E3EC6 /* Assets.xcassets */; };
 		4707F7AB1BD95677008E3EC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4707F7A91BD95677008E3EC6 /* LaunchScreen.storyboard */; };
 		4707F7B61BD95677008E3EC6 /* RevtubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7B51BD95677008E3EC6 /* RevtubeTests.swift */; };
+		4707F7D01BD95F0B008E3EC6 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7CF1BD95F0B008E3EC6 /* Playlist.swift */; settings = {ASSET_TAGS = (); }; };
+		4707F7D21BD95FA2008E3EC6 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7D11BD95FA2008E3EC6 /* ParseService.swift */; settings = {ASSET_TAGS = (); }; };
+		4707F7D61BD967FC008E3EC6 /* PlaylistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7D51BD967FC008E3EC6 /* PlaylistItem.swift */; settings = {ASSET_TAGS = (); }; };
+		4707F7D81BD96FBE008E3EC6 /* GuestPlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7D71BD96FBE008E3EC6 /* GuestPlaylistController.swift */; settings = {ASSET_TAGS = (); }; };
 		651C7D7E356B686844797E51 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E9215FB639FFB1ECF17A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -38,8 +40,6 @@
 		107E9215FB639FFB1ECF17A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4707F79B1BD95676008E3EC6 /* Revtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4707F79E1BD95677008E3EC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4707F7A01BD95677008E3EC6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		4707F7A21BD95677008E3EC6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4707F7A51BD95677008E3EC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4707F7A71BD95677008E3EC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4707F7AA1BD95677008E3EC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +48,10 @@
 		4707F7B51BD95677008E3EC6 /* RevtubeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevtubeTests.swift; sourceTree = "<group>"; };
 		4707F7B71BD95677008E3EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4707F7BC1BD95677008E3EC6 /* RevtubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RevtubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4707F7CF1BD95F0B008E3EC6 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		4707F7D11BD95FA2008E3EC6 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
+		4707F7D51BD967FC008E3EC6 /* PlaylistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistItem.swift; sourceTree = "<group>"; };
+		4707F7D71BD96FBE008E3EC6 /* GuestPlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestPlaylistController.swift; sourceTree = "<group>"; };
 		546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,13 +114,10 @@
 		4707F79D1BD95676008E3EC6 /* Revtube */ = {
 			isa = PBXGroup;
 			children = (
-				4707F79E1BD95677008E3EC6 /* AppDelegate.swift */,
-				4707F7A01BD95677008E3EC6 /* MasterViewController.swift */,
-				4707F7A21BD95677008E3EC6 /* DetailViewController.swift */,
-				4707F7A41BD95677008E3EC6 /* Main.storyboard */,
-				4707F7A71BD95677008E3EC6 /* Assets.xcassets */,
-				4707F7A91BD95677008E3EC6 /* LaunchScreen.storyboard */,
-				4707F7AC1BD95677008E3EC6 /* Info.plist */,
+				4707F7D41BD96015008E3EC6 /* Main */,
+				4707F7D31BD95FFB008E3EC6 /* UI */,
+				4707F7CE1BD95EFB008E3EC6 /* Models */,
+				4707F7D11BD95FA2008E3EC6 /* ParseService.swift */,
 			);
 			path = Revtube;
 			sourceTree = "<group>";
@@ -128,6 +129,35 @@
 				4707F7B71BD95677008E3EC6 /* Info.plist */,
 			);
 			path = RevtubeTests;
+			sourceTree = "<group>";
+		};
+		4707F7CE1BD95EFB008E3EC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4707F7CF1BD95F0B008E3EC6 /* Playlist.swift */,
+				4707F7D51BD967FC008E3EC6 /* PlaylistItem.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4707F7D31BD95FFB008E3EC6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4707F7A41BD95677008E3EC6 /* Main.storyboard */,
+				4707F7A71BD95677008E3EC6 /* Assets.xcassets */,
+				4707F7A91BD95677008E3EC6 /* LaunchScreen.storyboard */,
+				4707F7D71BD96FBE008E3EC6 /* GuestPlaylistController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		4707F7D41BD96015008E3EC6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4707F79E1BD95677008E3EC6 /* AppDelegate.swift */,
+				4707F7AC1BD95677008E3EC6 /* Info.plist */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		DE32B8EB16263E72803091CF /* Pods */ = {
@@ -320,9 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4707F7A31BD95677008E3EC6 /* DetailViewController.swift in Sources */,
-				4707F7A11BD95677008E3EC6 /* MasterViewController.swift in Sources */,
+				4707F7D81BD96FBE008E3EC6 /* GuestPlaylistController.swift in Sources */,
+				4707F7D21BD95FA2008E3EC6 /* ParseService.swift in Sources */,
 				4707F79F1BD95677008E3EC6 /* AppDelegate.swift in Sources */,
+				4707F7D61BD967FC008E3EC6 /* PlaylistItem.swift in Sources */,
+				4707F7D01BD95F0B008E3EC6 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,6 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
