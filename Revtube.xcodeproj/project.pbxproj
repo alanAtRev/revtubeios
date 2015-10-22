@@ -14,7 +14,7 @@
 		4707F7A81BD95677008E3EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4707F7A71BD95677008E3EC6 /* Assets.xcassets */; };
 		4707F7AB1BD95677008E3EC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4707F7A91BD95677008E3EC6 /* LaunchScreen.storyboard */; };
 		4707F7B61BD95677008E3EC6 /* RevtubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7B51BD95677008E3EC6 /* RevtubeTests.swift */; };
-		4707F7C11BD95677008E3EC6 /* RevtubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7C01BD95677008E3EC6 /* RevtubeUITests.swift */; };
+		651C7D7E356B686844797E51 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E9215FB639FFB1ECF17A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107E9215FB639FFB1ECF17A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4707F79B1BD95676008E3EC6 /* Revtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4707F79E1BD95677008E3EC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4707F7A01BD95677008E3EC6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -47,8 +48,8 @@
 		4707F7B51BD95677008E3EC6 /* RevtubeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevtubeTests.swift; sourceTree = "<group>"; };
 		4707F7B71BD95677008E3EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4707F7BC1BD95677008E3EC6 /* RevtubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RevtubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4707F7C01BD95677008E3EC6 /* RevtubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevtubeUITests.swift; sourceTree = "<group>"; };
-		4707F7C21BD95677008E3EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651C7D7E356B686844797E51 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +78,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39DF6982B2F9E85AF746A36D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				107E9215FB639FFB1ECF17A2 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4707F7921BD95676008E3EC6 = {
 			isa = PBXGroup;
 			children = (
 				4707F79D1BD95676008E3EC6 /* Revtube */,
 				4707F7B41BD95677008E3EC6 /* RevtubeTests */,
-				4707F7BF1BD95677008E3EC6 /* RevtubeUITests */,
 				4707F79C1BD95676008E3EC6 /* Products */,
+				DE32B8EB16263E72803091CF /* Pods */,
+				39DF6982B2F9E85AF746A36D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,13 +130,13 @@
 			path = RevtubeTests;
 			sourceTree = "<group>";
 		};
-		4707F7BF1BD95677008E3EC6 /* RevtubeUITests */ = {
+		DE32B8EB16263E72803091CF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4707F7C01BD95677008E3EC6 /* RevtubeUITests.swift */,
-				4707F7C21BD95677008E3EC6 /* Info.plist */,
+				EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */,
+				546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */,
 			);
-			path = RevtubeUITests;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4707F7C51BD95677008E3EC6 /* Build configuration list for PBXNativeTarget "Revtube" */;
 			buildPhases = (
+				C963449E344B1A97E14D6165 /* Check Pods Manifest.lock */,
 				4707F7971BD95676008E3EC6 /* Sources */,
 				4707F7981BD95676008E3EC6 /* Frameworks */,
 				4707F7991BD95676008E3EC6 /* Resources */,
+				4E0CB7F429651EE4DBEC3115 /* Embed Pods Frameworks */,
+				16E9818D0B460E606BABE64A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +267,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16E9818D0B460E606BABE64A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E0CB7F429651EE4DBEC3115 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C963449E344B1A97E14D6165 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4707F7971BD95676008E3EC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4707F7C11BD95677008E3EC6 /* RevtubeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,9 +461,11 @@
 		};
 		4707F7C61BD95677008E3EC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Revtube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,9 +474,11 @@
 		};
 		4707F7C71BD95677008E3EC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Revtube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +490,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RevtubeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.RevtubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,6 +503,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RevtubeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.RevtubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = RevtubeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.RevtubeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -460,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = RevtubeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.RevtubeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +556,7 @@
 				4707F7C71BD95677008E3EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4707F7C81BD95677008E3EC6 /* Build configuration list for PBXNativeTarget "RevtubeTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +565,7 @@
 				4707F7CA1BD95677008E3EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4707F7CB1BD95677008E3EC6 /* Build configuration list for PBXNativeTarget "RevtubeUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +574,7 @@
 				4707F7CD1BD95677008E3EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
