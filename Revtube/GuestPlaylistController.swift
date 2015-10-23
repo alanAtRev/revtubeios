@@ -62,7 +62,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     func createTimer() {
         if timer == nil {
             NSLog("Timer Started")
-            timer = NSTimer.scheduledTimerWithTimeInterval(10.0,
+            timer = NSTimer.scheduledTimerWithTimeInterval(5.0,
                 target: self,
                 selector: Selector("loadTable"),
                 userInfo: nil,
