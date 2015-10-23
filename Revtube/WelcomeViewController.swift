@@ -31,5 +31,15 @@ class WelcomeViewController: UIViewController {
             controller.playlistCode = codeField.text
         }
     }
+    
+    func onParseError(message: String, error: NSError) {
+        let alertController = UIAlertController(title: "Oh no!", message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok",
+            style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
 
 }

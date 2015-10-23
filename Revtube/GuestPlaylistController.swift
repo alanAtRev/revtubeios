@@ -13,6 +13,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     @IBOutlet var findingPartyView: UIView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var emptyListMessage: UILabel!
     @IBOutlet var addVideoButton: UIButton!
     
     var parseService : ParseService?
@@ -36,6 +37,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     override func viewDidAppear(animated: Bool) {
         tableView.hidden = true
         addVideoButton.hidden = true
+        emptyListMessage.hidden = true
         findingPartyView.hidden = false
         loadTable()
     }
@@ -102,7 +104,16 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         self.findingPartyView.hidden = true
         self.tableView.hidden = false
         self.addVideoButton.hidden = false
-        self.tableView.reloadData()
+        
+        if self.playListItems?.count > 0 {
+            self.tableView.hidden = false
+            self.emptyListMessage.hidden = true
+            self.tableView.reloadData()
+        } else {
+            self.tableView.hidden = true
+            self.emptyListMessage.hidden = false
+        }
+    
         createTimer()
     }
     

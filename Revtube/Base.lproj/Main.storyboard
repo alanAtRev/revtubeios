@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="17e-Fb-3bC" kind="show" id="HpB-lO-PzJ"/>
+                                    <segue destination="17e-Fb-3bC" kind="show" id="jLK-ll-jhu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTY-3A-KgK">
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="224" y="-656"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Playlist View Controller-->
         <scene sceneID="NKR-Tm-ZCv">
             <objects>
-                <viewController id="17e-Fb-3bC" sceneMemberID="viewController">
+                <viewController id="17e-Fb-3bC" customClass="StartPlaylistViewController" customModule="Revtube" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cDg-2Z-p2Z"/>
                         <viewControllerLayoutGuide type="bottom" id="8eL-DM-ka3"/>
@@ -127,8 +127,76 @@
                     <view key="view" contentMode="scaleToFill" id="dxJ-ea-Z0A">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Started!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsO-V1-RYD">
+                                <rect key="frame" x="224" y="79" width="151" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" [CODE]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-WJ-ghT">
+                                <rect key="frame" x="235" y="183" width="130.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share the following code with your guests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXN-ok-OTS">
+                                <rect key="frame" x="193" y="117" width="214" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="DrC-Ud-Hhd"/>
+                                    <constraint firstAttribute="height" constant="58" id="Kzv-Em-foI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-aD-Zuz">
+                                <rect key="frame" x="282" y="186" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CF3-R3-Als">
+                                <rect key="frame" x="175" y="246" width="250" height="47"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="MN7-Bg-a66"/>
+                                    <constraint firstAttribute="width" constant="250" id="fzL-Fj-ODv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Join Party!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onJoinButtonTapped:" destination="PaL-Ce-SoD" eventType="touchUpInside" id="5sc-rQ-E1U"/>
+                                    <segue destination="i17-Wd-EDh" kind="show" identifier="goToPlaylist" id="HZG-Ae-rpa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OsO-V1-RYD" firstAttribute="centerX" secondItem="dxJ-ea-Z0A" secondAttribute="centerX" id="9je-T9-4RZ"/>
+                            <constraint firstItem="n9V-aD-Zuz" firstAttribute="centerX" secondItem="dxJ-ea-Z0A" secondAttribute="centerX" id="FuC-mT-0cv"/>
+                            <constraint firstItem="UXN-ok-OTS" firstAttribute="centerX" secondItem="dxJ-ea-Z0A" secondAttribute="centerX" id="J6B-SZ-Z6P"/>
+                            <constraint firstItem="UXN-ok-OTS" firstAttribute="top" secondItem="OsO-V1-RYD" secondAttribute="bottom" constant="8" id="JC8-i6-6m9"/>
+                            <constraint firstItem="Ugz-WJ-ghT" firstAttribute="centerX" secondItem="dxJ-ea-Z0A" secondAttribute="centerX" id="V0x-ro-JgB"/>
+                            <constraint firstItem="CF3-R3-Als" firstAttribute="top" secondItem="Ugz-WJ-ghT" secondAttribute="bottom" constant="20" id="VIW-Bl-gm1"/>
+                            <constraint firstItem="OsO-V1-RYD" firstAttribute="top" secondItem="cDg-2Z-p2Z" secondAttribute="bottom" constant="15" id="Zch-I9-8hB"/>
+                            <constraint firstItem="Ugz-WJ-ghT" firstAttribute="top" secondItem="UXN-ok-OTS" secondAttribute="bottom" constant="8" id="cqK-kS-eXe"/>
+                            <constraint firstItem="CF3-R3-Als" firstAttribute="centerX" secondItem="dxJ-ea-Z0A" secondAttribute="centerX" id="gj3-Hv-u70"/>
+                            <constraint firstItem="n9V-aD-Zuz" firstAttribute="top" secondItem="UXN-ok-OTS" secondAttribute="bottom" constant="4" id="h1C-2E-26I"/>
+                            <constraint firstItem="n9V-aD-Zuz" firstAttribute="top" secondItem="UXN-ok-OTS" secondAttribute="bottom" constant="11" id="qjd-kU-NTg"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h1C-2E-26I"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="activtyIndicator" destination="n9V-aD-Zuz" id="4lh-YV-2vt"/>
+                        <outlet property="codeLabel" destination="Ugz-WJ-ghT" id="4Cw-jG-P4w"/>
+                        <outlet property="joinPartyButton" destination="CF3-R3-Als" id="PBR-sa-jJx"/>
+                        <outlet property="titleLabel" destination="OsO-V1-RYD" id="LoY-gw-tyb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvs-aE-jP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +214,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist empty.  Add some videos." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCG-Dg-6u5">
+                                <rect key="frame" x="20" y="288" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pw-M3-n4p" userLabel="LoadingView">
                                 <rect key="frame" x="180" y="257" width="240" height="87"/>
                                 <subviews>
@@ -255,6 +329,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.28627452250000002" green="0.80392158030000005" blue="0.85098040100000005" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="nKC-zJ-0M5" firstAttribute="top" secondItem="a1m-1c-d5e" secondAttribute="topMargin" id="0AE-2R-IuU"/>
                                                 <constraint firstItem="nKC-zJ-0M5" firstAttribute="leading" secondItem="hxt-7e-YjN" secondAttribute="trailing" constant="8" id="8zT-n9-j7E"/>
@@ -355,10 +430,14 @@
                         <constraints>
                             <constraint firstItem="ucs-mO-yqQ" firstAttribute="leading" secondItem="xN9-ot-mzb" secondAttribute="leadingMargin" constant="-20" id="1x1-zM-zFd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ucs-mO-yqQ" secondAttribute="trailing" constant="-20" id="4Jf-aC-cIX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YCG-Dg-6u5" secondAttribute="trailing" id="B7b-jO-Fr5"/>
                             <constraint firstItem="9pw-M3-n4p" firstAttribute="centerY" secondItem="xN9-ot-mzb" secondAttribute="centerY" id="HiM-Iw-LeB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F18-BC-SMv" secondAttribute="trailing" constant="-20" id="lXX-c5-dJq"/>
+                            <constraint firstItem="YCG-Dg-6u5" firstAttribute="centerY" secondItem="xN9-ot-mzb" secondAttribute="centerY" id="nIT-J1-STo"/>
+                            <constraint firstItem="YCG-Dg-6u5" firstAttribute="centerX" secondItem="xN9-ot-mzb" secondAttribute="centerX" id="okZ-Ut-BKP"/>
                             <constraint firstItem="F18-BC-SMv" firstAttribute="leading" secondItem="xN9-ot-mzb" secondAttribute="leadingMargin" constant="-20" id="oya-pJ-31Z"/>
                             <constraint firstItem="F18-BC-SMv" firstAttribute="top" secondItem="0hX-St-ZaT" secondAttribute="bottom" id="rwz-n7-uIq"/>
+                            <constraint firstItem="YCG-Dg-6u5" firstAttribute="leading" secondItem="xN9-ot-mzb" secondAttribute="leadingMargin" id="sa0-Wh-E8E"/>
                             <constraint firstItem="UfY-cB-5ZA" firstAttribute="top" secondItem="ucs-mO-yqQ" secondAttribute="bottom" id="xMn-Xo-gNK"/>
                             <constraint firstItem="UfY-cB-5ZA" firstAttribute="top" secondItem="F18-BC-SMv" secondAttribute="bottom" constant="60" id="yFM-gu-KlL"/>
                             <constraint firstItem="9pw-M3-n4p" firstAttribute="centerX" secondItem="xN9-ot-mzb" secondAttribute="centerX" id="zfT-LL-dRX"/>
@@ -366,7 +445,8 @@
                     </view>
                     <connections>
                         <outlet property="addVideoButton" destination="ucs-mO-yqQ" id="1Qi-b1-ljP"/>
-                        <outlet property="findingPartyView" destination="VXS-hQ-ppd" id="vUv-Y4-Yb8"/>
+                        <outlet property="emptyListMessage" destination="YCG-Dg-6u5" id="QkK-KX-B9w"/>
+                        <outlet property="findingPartyView" destination="9pw-M3-n4p" id="mcv-DT-GLa"/>
                         <outlet property="tableView" destination="F18-BC-SMv" id="u3I-8T-SUv"/>
                     </connections>
                 </viewController>
@@ -509,4 +589,7 @@
             <point key="canvasLocation" x="1708" y="-192"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HZG-Ae-rpa"/>
+    </inferredMetricsTieBreakers>
 </document>

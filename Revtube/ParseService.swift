@@ -19,6 +19,8 @@ import Parse
     
     optional func onPlaylistItemSaved()
     
+    optional func onPlaylistSaved(code: String)
+    
     func onParseError(message: String, error: NSError)
     
 }
@@ -109,6 +111,36 @@ class ParseService : NSObject {
                 self.delegate?.onParseError("Error adding item to playlist", error: error!)
             }
         }
+    }
+    
+    func addPlayList() {
+        let item = PFObject(className: "Playlist")
+        item["code"] = randomStringWithLength(4);
+        
+        item.saveInBackgroundWithBlock() {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                self.delegate?.onPlaylistSaved!(item["code"] as! String)
+            } else {
+                self.delegate?.onParseError("Error creating playlist", error: error!)
+            }
+        }
+    }
+
+    
+    private func randomStringWithLength (len : Int) -> NSString {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyz0123456789"
+        
+        let randomString : NSMutableString = NSMutableString(capacity: len)
+        
+        for (var i=0; i < len; i++){
+            let length = UInt32 (letters.length)
+            let rand = arc4random_uniform(length)
+            randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
+        }
+        
+        return randomString
     }
     
 }

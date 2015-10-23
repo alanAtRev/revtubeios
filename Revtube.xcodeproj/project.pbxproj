@@ -26,6 +26,7 @@
 		4707F7EB1BD9E2C4008E3EC6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		47D796F71BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D796F61BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		47D796F91BDAA22A004FA817 /* PlayListHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D796F81BDAA22A004FA817 /* PlayListHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
+		47D796FB1BDAAE56004FA817 /* StartPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D796FA1BDAAE56004FA817 /* StartPlaylistViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		651C7D7E356B686844797E51 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E9215FB639FFB1ECF17A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		47D796F61BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyPlayingTableViewCell.swift; sourceTree = "<group>"; };
 		47D796F81BDAA22A004FA817 /* PlayListHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayListHeaderCell.swift; sourceTree = "<group>"; };
+		47D796FA1BDAAE56004FA817 /* StartPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPlaylistViewController.swift; sourceTree = "<group>"; };
 		546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 				4707F7D71BD96FBE008E3EC6 /* GuestPlaylistController.swift */,
 				4707F7E01BD9AB9D008E3EC6 /* AddToPlaylistController.swift */,
 				4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */,
+				47D796FA1BDAAE56004FA817 /* StartPlaylistViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4707F7DC1BD98C9F008E3EC6 /* ImageLoader.swift in Sources */,
+				47D796FB1BDAAE56004FA817 /* StartPlaylistViewController.swift in Sources */,
 				47D796F71BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift in Sources */,
 				4707F7E91BD9E1DD008E3EC6 /* UIColor+Rev.swift in Sources */,
 				4707F7DE1BD9A87D008E3EC6 /* YoutubeSearchService.swift in Sources */,

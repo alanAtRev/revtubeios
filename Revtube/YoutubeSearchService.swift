@@ -25,7 +25,7 @@ class YoutubeSearchService : NSObject {
     func searchYoutube(query : String) {
         // Set up your URL
         let escapedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        let youtubeApi: String = "https://content.googleapis.com/youtube/v3/search?part=snippet&q=" + escapedQuery! + "&maxResults=10&key=AIzaSyBqf7fU8HgDmRG752sxL1eoff5rSJVIEKk"
+        let youtubeApi: String = "https://content.googleapis.com/youtube/v3/search?part=snippet&q=" + escapedQuery! + "&type=video&maxResults=10&key=AIzaSyBqf7fU8HgDmRG752sxL1eoff5rSJVIEKk"
         let url: NSURL = NSURL(string: youtubeApi)!
         
         // Create your request
@@ -44,6 +44,7 @@ class YoutubeSearchService : NSObject {
                     let items: NSArray = result["items"] as! NSArray
                     var results: [YoutubeSearchResult] = [YoutubeSearchResult]()
                     for item in items {
+                        NSLog("\(item)")
                         let id: NSDictionary = item["id"] as! NSDictionary
                         let videoId: String = id["videoId"] as! String
                         let snippet: NSDictionary = item["snippet"] as! NSDictionary
