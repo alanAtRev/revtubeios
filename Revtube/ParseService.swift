@@ -9,6 +9,8 @@
 import Foundation
 import Parse
 
+
+
 @objc protocol ParseServiceDelegate {
     
     optional func onPlaylistRetrievedSuccess(playList: Playlist)
@@ -23,7 +25,7 @@ class ParseService : NSObject {
     
     var delegate : ParseServiceDelegate?
     
-    init(delegate: ParseServiceDelegate) {
+    init(delegate: ParseServiceDelegate?) {
         self.delegate = delegate
     }
     
@@ -42,7 +44,8 @@ class ParseService : NSObject {
     
     func getPlaylistItemsForPlaylist(playlistObjectId: String) {
         let query = PFQuery(className: "PlaylistItem")
-        query.whereKey("post", equalTo: PFObject(withoutDataWithClassName: "Playlist", objectId: playlistObjectId))
+        query.whereKey("Playlist", equalTo: PFObject(withoutDataWithClassName: "Playlist", objectId: playlistObjectId))
+        query.orderByDescending("likes")
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
@@ -58,6 +61,20 @@ class ParseService : NSObject {
             } else {
                 self.delegate?.onParseError("Could not retrieve playist items", error: error!)
             }
-        }    }
+        }
+    }
+    
+    func likePlayListItem(item : PlaylistItem) {
+        let query = PFQuery(className:"PlaylistItem")
+        query.getObjectInBackgroundWithId(item.objectId!) {
+            (playlistItem: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let playlistItem = playlistItem {
+                playlistItem["likes"] = playlistItem["likes"] as! Int + 1;
+                playlistItem.saveInBackground()
+            }
+        }
+    }
 
 }
