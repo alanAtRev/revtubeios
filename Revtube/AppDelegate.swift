@@ -17,11 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
         
         // Initialize Parse.
         Parse.setApplicationId("EmxeEeMgQxwUeC42hDPXfHK0tnKoTcLSL5OeZsuy",
             clientKey: "dqHgT7tkQ3sJgMHpkJZ9N1RtPQDZ8VY02yg28TrZ")
+        UINavigationBar.appearance().tintColor = UIColor(r: 0, g: 170, b: 255)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor(r: 0, g: 170, b: 255)]
+        
         return true
     }
 

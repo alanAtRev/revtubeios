@@ -32,11 +32,11 @@ class YouTubeResultTableViewCell: UITableViewCell {
             if(result!.added) {
                 addButton.enabled = false
                 addButton.backgroundColor = UIColor.grayColor()
-                addButton.setTitle("Added", forState: UIControlState.Disabled)
+                addButton.setTitle("\u{2713}" , forState: UIControlState.Disabled)
             } else {
                 addButton.enabled = true
                 addButton.backgroundColor = UIColor(r: 0, g: 170, b: 255)
-                addButton.setTitle("Added", forState: UIControlState.Normal)
+                addButton.setTitle("+", forState: UIControlState.Normal)
             }
         }
     }
@@ -45,6 +45,6 @@ class YouTubeResultTableViewCell: UITableViewCell {
         self.delegate?.addPlayListItem(result!)
         addButton.enabled = false
         addButton.backgroundColor = UIColor.grayColor()
-        addButton.setTitle("Added", forState: UIControlState.Disabled)
+        addButton.setTitle("\u{2713}", forState: UIControlState.Disabled)
     }
 }

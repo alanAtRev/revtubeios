@@ -390,7 +390,7 @@
                                                         <constraint firstAttribute="width" constant="60" id="lEJ-1z-HWm"/>
                                                         <constraint firstAttribute="width" constant="53" id="oEu-vs-Ehl"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="14"/>
                                                     <state key="normal" title="Like">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -472,8 +472,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search For a Video " textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-gc-nCG">
-                                <rect key="frame" x="4" y="64" width="469" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Search For a Video " textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-gc-nCG">
+                                <rect key="frame" x="10" y="64" width="490" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="on6-TC-SHc"/>
@@ -482,10 +482,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyh-Fp-46u">
-                                <rect key="frame" x="473" y="64" width="127" height="40"/>
+                                <rect key="frame" x="500" y="64" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="Nmf-1a-C5X"/>
+                                    <constraint firstAttribute="width" constant="100" id="Nmf-1a-C5X"/>
                                     <constraint firstAttribute="height" constant="40" id="TCQ-jr-SpC"/>
                                 </constraints>
                                 <state key="normal" title="Search">
@@ -524,8 +524,8 @@
                                                         <constraint firstAttribute="height" constant="22" id="etR-U2-MAp"/>
                                                         <constraint firstAttribute="width" constant="53" id="oDe-aL-c9d"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <state key="normal" title="Add">
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                                    <state key="normal" title="+">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="default">
@@ -573,7 +573,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d0z-gc-nCG" firstAttribute="leading" secondItem="zN8-eb-svo" secondAttribute="leadingMargin" constant="-16" id="1oW-od-kmU"/>
+                            <constraint firstItem="d0z-gc-nCG" firstAttribute="leading" secondItem="zN8-eb-svo" secondAttribute="leadingMargin" constant="-10" id="1oW-od-kmU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YGt-0i-Qh0" secondAttribute="trailing" constant="-20" id="BGl-Pk-Rsl"/>
                             <constraint firstItem="lyh-Fp-46u" firstAttribute="leading" secondItem="d0z-gc-nCG" secondAttribute="trailing" id="GSd-Jk-wa5"/>
                             <constraint firstItem="YGt-0i-Qh0" firstAttribute="top" secondItem="d0z-gc-nCG" secondAttribute="bottom" id="H0t-x8-1qB"/>
