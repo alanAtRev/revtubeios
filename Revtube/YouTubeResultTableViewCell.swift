@@ -19,7 +19,7 @@ class YouTubeResultTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     
     var delegate: YouTubeResultTableViewCellDelegate?
-
+    
     var result: YoutubeSearchResult? {
         didSet {
             ImageLoader.sharedLoader.imageForUrl(result!.thumbnailUrl,
@@ -28,10 +28,23 @@ class YouTubeResultTableViewCell: UITableViewCell {
                     self.thumbnailImageView.image = image
             })
             titleLabel.text = result!.title
+            
+            if(result!.added) {
+                addButton.enabled = false
+                addButton.backgroundColor = UIColor.grayColor()
+                addButton.setTitle("Added", forState: UIControlState.Disabled)
+            } else {
+                addButton.enabled = true
+                addButton.backgroundColor = UIColor(r: 48, g: 131, b: 251)
+                addButton.setTitle("Added", forState: UIControlState.Normal)
+            }
         }
     }
     
     @IBAction func onAddButtonTapped(sender: AnyObject) {
         self.delegate?.addPlayListItem(result!)
+        addButton.enabled = false
+        addButton.backgroundColor = UIColor.grayColor()
+        addButton.setTitle("Added", forState: UIControlState.Disabled)
     }
 }

@@ -11,8 +11,9 @@ import Foundation
 class YoutubeSearchResult : NSObject {
     
     var videoId: String
-    var thumbnailUrl : String
-    var title : String
+    var thumbnailUrl: String
+    var title: String
+    var added: Bool = false
     
     init(videoId: String, thumbnailUrl: String, title: String) {
         self.videoId = videoId

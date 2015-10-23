@@ -21,11 +21,13 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
     @IBOutlet var tableView: UITableView!
     
     var results: [YoutubeSearchResult]?
+    var added: [String]?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         parseService = ParseService(delegate: self)
         self.youtubeService = YoutubeSearchService(delegate: self)
+        added = [String]()
     }
     
     override func viewDidLoad() {
@@ -59,6 +61,11 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
     //UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: YouTubeResultTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("resultItemTableViewCells") as! YouTubeResultTableViewCell
+        if added!.contains(results![indexPath.row].videoId) {
+            results![indexPath.row].added = true
+        } else {
+            results![indexPath.row].added = false
+        }
         cell.result = results![indexPath.row]
         cell.delegate = self
         return cell
@@ -78,6 +85,7 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
 
     //YoutubeSearchResultTableViewCellDelegate
     func addPlayListItem(result: YoutubeSearchResult) {
+        added?.append(result.videoId)
         parseService?.addPlayListItem(playList!.objectId!,
             videoId: result.videoId,
             videoTitle: result.title,

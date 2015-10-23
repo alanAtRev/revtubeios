@@ -108,7 +108,6 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     // UITableView Delegate and Datasource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         if(indexPath.section == 0) {
             let cell: CurrentlyPlayingItemTableViewCell =
                 self.tableView.dequeueReusableCellWithIdentifier("currentlyPlayingTableViewCell") as! CurrentlyPlayingItemTableViewCell
@@ -119,9 +118,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         
         let cell: PlayListItemTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("playlistItemTableViewCells") as! PlayListItemTableViewCell
         let item = itemForIndexPath(indexPath)
-        if(likedItems.contains(item.objectId!)) {
-            item.liked = true
-        }
+        item.liked = isLiked(item.objectId!)
         cell.playListItem = item
         cell.delegate = self
         return cell
@@ -145,19 +142,24 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         }
     }
     
-//    func saveLikes(playListItemObjectId : String) {
-//        let data =  NSUserDefaults.standardUserDefaults()
-//        var likes: NSArray = data.arrayForKey("likes") as? NSA
-//        if(likes == nil) {
-//            likes = NSArray()
-//        }
-//        
-//            likes.append(<#T##newElement: AnyObject##AnyObject#>)
-//        }
-//        
-//        data.setValue(<#T##value: AnyObject?##AnyObject?#>, forKey: "liked")
-//    }
+    func saveLikes(playListItemObjectId : String) {
+        let data =  NSUserDefaults.standardUserDefaults()
+        var likes = data.arrayForKey("likes")
+        if(likes == nil) {
+            likes = [String]()
+        }
+        likes!.append(playListItemObjectId)
+        data.setValue(likes, forKey: "likes")
+    }
     
+    func isLiked(playListItemObjectId: String) -> Bool {
+        let data =  NSUserDefaults.standardUserDefaults()
+        if let likes:[String] = data.arrayForKey("likes") as? [String]{
+            return likes.contains(playListItemObjectId)
+        }
+        return false
+    }
+
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30;
     }
@@ -186,6 +188,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     func likeButtonTapped(playListItem: PlaylistItem) {
         likedItems.append(playListItem.objectId!)
+        saveLikes(playListItem.objectId!)
         destroyTimer()
         parseService?.likePlayListItem(playListItem)
         loadTable()
