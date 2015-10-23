@@ -44,7 +44,6 @@ class YoutubeSearchService : NSObject {
                     let items: NSArray = result["items"] as! NSArray
                     var results: [YoutubeSearchResult] = [YoutubeSearchResult]()
                     for item in items {
-                        NSLog("\(item)")
                         let id: NSDictionary = item["id"] as! NSDictionary
                         let videoId: String = id["videoId"] as! String
                         let snippet: NSDictionary = item["snippet"] as! NSDictionary

@@ -113,6 +113,11 @@ class ParseService : NSObject {
         }
     }
     
+    func removePlayListItem(playListObjectId: String) {
+        let item = PFObject(withoutDataWithClassName: "PlaylistItem", objectId: playListObjectId)
+        item.deleteInBackground()
+    }
+    
     func addPlayList() {
         let item = PFObject(className: "Playlist")
         item["code"] = randomStringWithLength(4);

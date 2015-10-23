@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4707F79A1BD95676008E3EC6"
-               BuildableName = "Revtube.app"
+               BuildableName = "Party Tube.app"
                BlueprintName = "Revtube"
                ReferencedContainer = "container:Revtube.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4707F79A1BD95676008E3EC6"
-            BuildableName = "Revtube.app"
+            BuildableName = "Party Tube.app"
             BlueprintName = "Revtube"
             ReferencedContainer = "container:Revtube.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4707F79A1BD95676008E3EC6"
-            BuildableName = "Revtube.app"
+            BuildableName = "Party Tube.app"
             BlueprintName = "Revtube"
             ReferencedContainer = "container:Revtube.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4707F79A1BD95676008E3EC6"
-            BuildableName = "Revtube.app"
+            BuildableName = "Party Tube.app"
             BlueprintName = "Revtube"
             ReferencedContainer = "container:Revtube.xcodeproj">
          </BuildableReference>

@@ -37,7 +37,20 @@ class StartPlaylistViewController: UIViewController, ParseServiceDelegate {
         codeLabel.text = code;
         activtyIndicator.hidden = true
         joinPartyButton.hidden = false
+        savePartyHost(code)
     }
+    
+    func savePartyHost(code: String) {
+        let data =  NSUserDefaults.standardUserDefaults()
+        var likes = data.arrayForKey("hostParties")
+        if(likes == nil) {
+            likes = [String]()
+        }
+        likes!.append(code)
+        data.setValue(likes, forKey: "hostParties")
+    }
+
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToPlaylist" {

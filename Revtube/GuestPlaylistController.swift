@@ -95,7 +95,11 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     func onPlaylistRetrievedSuccess(playList: Playlist) {
         self.playList = playList
-        self.navigationItem.title = "Code: \(playList.code!)"
+        if(isPartyHost(playList.code!)) {
+             self.navigationItem.title = "Host of \(playList.code!)"
+        } else {
+            self.navigationItem.title = "Code: \(playList.code!)"
+        }
         parseService?.getPlaylistItemsForPlaylist(self.playList!.objectId!)
     }
     
@@ -170,6 +174,14 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         }
         return false
     }
+    
+    func isPartyHost(code: String) -> Bool {
+        let data =  NSUserDefaults.standardUserDefaults()
+        if let likes:[String] = data.arrayForKey("hostParties") as? [String]{
+            return likes.contains(code)
+        }
+        return false
+    }
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30;
@@ -195,6 +207,34 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
             }
         }
         return 0
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if let code = playList?.code {
+            if indexPath.section != 0 {
+                return isPartyHost(code)
+            }
+            return false
+        } else {
+            return false
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            //remove the deleted object from your data source.
+            //If your data source is an NSMutableArray, do this
+            
+            let itemToRemove: PlaylistItem
+            if indexPath.section == 0 {
+                itemToRemove = playListItems!.removeAtIndex(0)
+            } else {
+                itemToRemove = playListItems!.removeAtIndex(indexPath.row + 1)
+            }
+            parseService?.removePlayListItem(itemToRemove.objectId!)
+            
+            tableView.reloadData()
+        }
     }
     
     func likeButtonTapped(playListItem: PlaylistItem) {

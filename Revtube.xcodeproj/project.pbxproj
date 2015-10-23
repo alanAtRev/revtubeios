@@ -49,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		107E9215FB639FFB1ECF17A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4707F79B1BD95676008E3EC6 /* Revtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Revtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4707F79B1BD95676008E3EC6 /* Party Tube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Tube.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4707F79E1BD95677008E3EC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4707F7A51BD95677008E3EC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4707F7A71BD95677008E3EC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		4707F79C1BD95676008E3EC6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4707F79B1BD95676008E3EC6 /* Revtube.app */,
+				4707F79B1BD95676008E3EC6 /* Party Tube.app */,
 				4707F7B11BD95677008E3EC6 /* RevtubeTests.xctest */,
 				4707F7BC1BD95677008E3EC6 /* RevtubeUITests.xctest */,
 			);
@@ -238,7 +238,7 @@
 			);
 			name = Revtube;
 			productName = Revtube;
-			productReference = 4707F79B1BD95676008E3EC6 /* Revtube.app */;
+			productReference = 4707F79B1BD95676008E3EC6 /* Party Tube.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4707F7B01BD95677008E3EC6 /* RevtubeTests */ = {
@@ -508,6 +508,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Party Tube";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,6 +547,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "Party Tube";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -561,7 +563,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Party Tube";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -575,7 +577,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Party Tube";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
