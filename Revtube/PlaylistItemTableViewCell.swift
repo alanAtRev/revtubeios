@@ -43,7 +43,7 @@ class PlayListItemTableViewCell : UITableViewCell {
                 likeButton.setTitle("Liked", forState: UIControlState.Disabled)
             } else {
                 likeButton.enabled = true
-                likeButton.backgroundColor = UIColor(r: 48, g: 131, b: 251)
+                likeButton.backgroundColor = UIColor(r: 0, g: 170, b: 255)
                 likeButton.setTitle("Like", forState: UIControlState.Normal)
             }
         }

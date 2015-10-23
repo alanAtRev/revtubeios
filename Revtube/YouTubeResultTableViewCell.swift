@@ -35,7 +35,7 @@ class YouTubeResultTableViewCell: UITableViewCell {
                 addButton.setTitle("Added", forState: UIControlState.Disabled)
             } else {
                 addButton.enabled = true
-                addButton.backgroundColor = UIColor(r: 48, g: 131, b: 251)
+                addButton.backgroundColor = UIColor(r: 0, g: 170, b: 255)
                 addButton.setTitle("Added", forState: UIControlState.Normal)
             }
         }
