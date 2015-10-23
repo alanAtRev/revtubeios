@@ -22,6 +22,8 @@
 		4707F7E11BD9AB9D008E3EC6 /* AddToPlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7E01BD9AB9D008E3EC6 /* AddToPlaylistController.swift */; settings = {ASSET_TAGS = (); }; };
 		4707F7E31BD9ADFB008E3EC6 /* YoutubeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7E21BD9ADFB008E3EC6 /* YoutubeSearchResult.swift */; settings = {ASSET_TAGS = (); }; };
 		4707F7E51BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		4707F7E91BD9E1DD008E3EC6 /* UIColor+Rev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7E81BD9E1DD008E3EC6 /* UIColor+Rev.swift */; settings = {ASSET_TAGS = (); }; };
+		4707F7EB1BD9E2C4008E3EC6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		651C7D7E356B686844797E51 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E9215FB639FFB1ECF17A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		4707F7E01BD9AB9D008E3EC6 /* AddToPlaylistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToPlaylistController.swift; sourceTree = "<group>"; };
 		4707F7E21BD9ADFB008E3EC6 /* YoutubeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResult.swift; sourceTree = "<group>"; };
 		4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeResultTableViewCell.swift; sourceTree = "<group>"; };
+		4707F7E81BD9E1DD008E3EC6 /* UIColor+Rev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Rev.swift"; sourceTree = "<group>"; };
+		4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +130,7 @@
 		4707F79D1BD95676008E3EC6 /* Revtube */ = {
 			isa = PBXGroup;
 			children = (
-				4707F7DB1BD98C9F008E3EC6 /* ImageLoader.swift */,
+				4707F7E71BD9E1CD008E3EC6 /* Util */,
 				4707F7D41BD96015008E3EC6 /* Main */,
 				4707F7D31BD95FFB008E3EC6 /* UI */,
 				4707F7CE1BD95EFB008E3EC6 /* Models */,
@@ -165,6 +169,7 @@
 				4707F7D91BD98459008E3EC6 /* PlaylistItemTableViewCell.swift */,
 				4707F7E01BD9AB9D008E3EC6 /* AddToPlaylistController.swift */,
 				4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */,
+				4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -176,6 +181,15 @@
 				4707F7AC1BD95677008E3EC6 /* Info.plist */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		4707F7E71BD9E1CD008E3EC6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4707F7E81BD9E1DD008E3EC6 /* UIColor+Rev.swift */,
+				4707F7DB1BD98C9F008E3EC6 /* ImageLoader.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		DE32B8EB16263E72803091CF /* Pods */ = {
@@ -369,10 +383,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4707F7DC1BD98C9F008E3EC6 /* ImageLoader.swift in Sources */,
+				4707F7E91BD9E1DD008E3EC6 /* UIColor+Rev.swift in Sources */,
 				4707F7DE1BD9A87D008E3EC6 /* YoutubeSearchService.swift in Sources */,
 				4707F7DA1BD98459008E3EC6 /* PlaylistItemTableViewCell.swift in Sources */,
 				4707F7D81BD96FBE008E3EC6 /* GuestPlaylistController.swift in Sources */,
 				4707F7D21BD95FA2008E3EC6 /* ParseService.swift in Sources */,
+				4707F7EB1BD9E2C4008E3EC6 /* WelcomeViewController.swift in Sources */,
 				4707F79F1BD95677008E3EC6 /* AppDelegate.swift in Sources */,
 				4707F7E31BD9ADFB008E3EC6 /* YoutubeSearchResult.swift in Sources */,
 				4707F7E51BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift in Sources */,

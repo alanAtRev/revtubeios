@@ -37,11 +37,11 @@ class PlaylistItem : NSObject {
     
     static func PlaylistItemFromParseObject(parseObject: PFObject) -> PlaylistItem {
         return PlaylistItem(objectId: parseObject.objectId!,
-            videoId: parseObject["videoId"] as! String,
-            videoTitle: parseObject["videoTitle"] as! String,
-            videoDuration: parseObject["videoDuration"] as! Int,
-            videoThumbnail: parseObject["videoThumbnail"] as! String,
-            likes: parseObject["likes"] as! Int)
+            videoId: parseObject["videoId"] as? String ?? "",
+            videoTitle: parseObject["videoTitle"] as? String ?? "",
+            videoDuration: 90,
+            videoThumbnail: parseObject["videoThumbnail"] as? String ?? "",
+            likes: parseObject["likes"] as? Int ?? 1)
     }
     
 }

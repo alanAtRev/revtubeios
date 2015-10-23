@@ -19,25 +19,24 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     var playListItems : [PlaylistItem]?
     var timer : NSTimer?
     
-    let playlistObjectId = "vxLtIafOqa"
     var likedItems : [String] = [String]()
+    var playlistCode: String?
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
         parseService = ParseService(delegate: self)
     }
     
-    
-    override func viewDidLoad() {
-        parseService?.getPlaylistWithId(playlistObjectId)
+    override func viewDidAppear(animated: Bool) {
         tableView.hidden = true
         findingPartyView.hidden = false
+        loadTable()
     }
     
     func loadTable()
     {
         NSLog("loading data")
-        parseService?.getPlaylistWithId(playlistObjectId)
+        parseService?.getPlaylistWithCode(playlistCode!)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -46,6 +45,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
 
     func createTimer() {
         if timer == nil {
+            NSLog("Timer Started")
             timer = NSTimer.scheduledTimerWithTimeInterval(10.0,
                 target: self,
                 selector: Selector("loadTable"),
@@ -56,6 +56,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     func destroyTimer() {
         if timer != nil {
+            NSLog("Timer Ended")
             timer?.invalidate()
             timer = nil
         }
@@ -65,15 +66,21 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         let alertController = UIAlertController(title: "Oh no!", message:
             message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok",
-            style: UIAlertActionStyle.Default, handler: nil))
+            style: UIAlertActionStyle.Default, handler: {
+                (action : UIAlertAction) in
+                    alertController.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.popViewControllerAnimated(true)
+        }))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.presentViewController(alertController,
+            animated: true, completion: nil)
         findingPartyView.hidden = false
     }
     
     func onPlaylistRetrievedSuccess(playList: Playlist) {
         self.playList = playList
-        self.navigationItem.title = playList.code
+        AppDelegate.currentPlayListId = playList.objectId
+        self.navigationItem.title = "Code: \(playList.code!)"
         parseService?.getPlaylistItemsForPlaylist(self.playList!.objectId!)
     }
     

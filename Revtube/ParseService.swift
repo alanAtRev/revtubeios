@@ -17,6 +17,8 @@ import Parse
     
     optional func onPlaylistItemsRetrieved(playlistItems: [PlaylistItem])
     
+    optional func onPlaylistItemSaved()
+    
     func onParseError(message: String, error: NSError)
     
 }
@@ -32,6 +34,20 @@ class ParseService : NSObject {
     func getPlaylistWithId(objectId: String) {
         let query = PFQuery(className: "Playlist")
         query.getObjectInBackgroundWithId(objectId) {
+            (parsePlaylist: PFObject?, error: NSError?) -> Void in
+            if error == nil && parsePlaylist != nil {
+                let playlist = Playlist.playlistFromParseObject(parsePlaylist!)
+                self.delegate?.onPlaylistRetrievedSuccess?(playlist)
+            } else {
+                self.delegate?.onParseError("Could not retrieve playist", error: error!)
+            }
+        }
+    }
+    
+    func getPlaylistWithCode(code: String) {
+        let query = PFQuery(className: "Playlist")
+        query.whereKey("code", equalTo: code)
+        query.getFirstObjectInBackgroundWithBlock() {
             (parsePlaylist: PFObject?, error: NSError?) -> Void in
             if error == nil && parsePlaylist != nil {
                 let playlist = Playlist.playlistFromParseObject(parsePlaylist!)
@@ -76,5 +92,23 @@ class ParseService : NSObject {
             }
         }
     }
-
+    
+    func addPlayListItem(playlistObjectId: String, videoId: String, videoTitle: String, videoThumbnail: String) {
+        let item = PFObject(className: "PlaylistItem")
+        item["Playlist"] = PFObject(withoutDataWithClassName: "Playlist", objectId: playlistObjectId)
+        item["videoId"]  = videoId
+        item["videoTitle"] = videoTitle
+        item["videoThumbnail"] = videoThumbnail
+        item["likes"] = 1
+        
+        item.saveInBackgroundWithBlock() {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+               self.delegate?.onPlaylistItemSaved!()
+            } else {
+                self.delegate?.onParseError("Error adding item to playlist", error: error!)
+            }
+        }
+    }
+    
 }

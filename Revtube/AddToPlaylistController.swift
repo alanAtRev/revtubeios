@@ -10,8 +10,10 @@ import UIKit
 
 class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
     UITableViewDataSource,
-    UITableViewDelegate {
+    UITableViewDelegate,
+    UITextFieldDelegate, ParseServiceDelegate, YouTubeResultTableViewCellDelegate {
     
+    var parseService : ParseService?
     var youtubeService: YoutubeSearchService?
     
     @IBOutlet var searchField: UITextField!
@@ -21,11 +23,21 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        parseService = ParseService(delegate: self)
         self.youtubeService = YoutubeSearchService(delegate: self)
     }
     
     override func viewDidLoad() {
         results = [YoutubeSearchResult]()
+        performSearch("")
+        searchField.delegate = self
+        searchField.returnKeyType = .Search
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        onSearchButtonTapped(textField)
+        searchField.resignFirstResponder()
+        return true
     }
     
     @IBAction func onSearchButtonTapped(sender: AnyObject) {
@@ -47,6 +59,7 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: YouTubeResultTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("resultItemTableViewCells") as! YouTubeResultTableViewCell
         cell.result = results![indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -62,4 +75,20 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
         return results?.count ?? 0
     }
 
+    //YoutubeSearchResultTableViewCellDelegate
+    func addPlayListItem(result: YoutubeSearchResult) {
+        parseService?.addPlayListItem(AppDelegate.currentPlayListId!,
+            videoId: result.videoId,
+            videoTitle: result.title,
+            videoThumbnail: result.thumbnailUrl)
+    }
+    
+    func onParseError(message: String, error: NSError) {
+        let alertController = UIAlertController(title: "Oh no!", message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok",
+            style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 }

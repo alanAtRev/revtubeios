@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol YouTubeResultTableViewCellDelegate {
+    func addPlayListItem(result: YoutubeSearchResult)
+}
+
 class YouTubeResultTableViewCell: UITableViewCell {
     
     @IBOutlet var thumbnailImageView: UIImageView!
     @IBOutlet var addButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
+    
+    var delegate: YouTubeResultTableViewCellDelegate?
 
     var result: YoutubeSearchResult? {
         didSet {
@@ -21,13 +27,11 @@ class YouTubeResultTableViewCell: UITableViewCell {
                     (image: UIImage?, url: String) in
                     self.thumbnailImageView.image = image
             })
-            
             titleLabel.text = result!.title
         }
     }
     
-    
-    
-    @IBAction func onAdButtonTapped(sender: AnyObject) {
+    @IBAction func onAddButtonTapped(sender: AnyObject) {
+        self.delegate?.addPlayListItem(result!)
     }
 }

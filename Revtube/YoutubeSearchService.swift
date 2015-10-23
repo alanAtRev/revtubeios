@@ -49,7 +49,7 @@ class YoutubeSearchService : NSObject {
                         let snippet: NSDictionary = item["snippet"] as! NSDictionary
                         let title: String = snippet["title"] as! String!
                         let thumbnails: NSDictionary = snippet["thumbnails"] as! NSDictionary!
-                        let defaultThumbnail: NSDictionary = thumbnails["default"] as! NSDictionary!
+                        let defaultThumbnail: NSDictionary = thumbnails["medium"] as! NSDictionary!
                         let url: String = defaultThumbnail["url"] as! String!
                         results.append(YoutubeSearchResult(videoId: videoId, thumbnailUrl: url, title: title))
                     }
