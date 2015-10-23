@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
         if codeField.text!.characters.count > 0 {
             performSegueWithIdentifier("showGuestPlaylist", sender: self)
         } else {
-            let alertController = UIAlertController(title: "Invalide Code", message:
+            let alertController = UIAlertController(title: "Invalid Code", message:
                 "Please enter a valid code", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Ok",
                 style: UIAlertActionStyle.Default, handler: nil))

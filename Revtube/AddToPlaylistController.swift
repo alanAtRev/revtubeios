@@ -15,6 +15,7 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
     
     var parseService : ParseService?
     var youtubeService: YoutubeSearchService?
+    var playList: Playlist?
     
     @IBOutlet var searchField: UITextField!
     @IBOutlet var tableView: UITableView!
@@ -77,7 +78,7 @@ class AddToPlaylistController : UIViewController, YoutubeSearchServiceDelegate,
 
     //YoutubeSearchResultTableViewCellDelegate
     func addPlayListItem(result: YoutubeSearchResult) {
-        parseService?.addPlayListItem(AppDelegate.currentPlayListId!,
+        parseService?.addPlayListItem(playList!.objectId!,
             videoId: result.videoId,
             videoTitle: result.title,
             videoThumbnail: result.thumbnailUrl)

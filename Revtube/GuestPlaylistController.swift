@@ -13,6 +13,7 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     @IBOutlet var findingPartyView: UIView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var addVideoButton: UIButton!
     
     var parseService : ParseService?
     var playList : Playlist?
@@ -27,8 +28,14 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         parseService = ParseService(delegate: self)
     }
     
+    override func viewDidLoad() {
+        tableView.hidden = true
+        addVideoButton.hidden = true
+    }
+    
     override func viewDidAppear(animated: Bool) {
         tableView.hidden = true
+        addVideoButton.hidden = true
         findingPartyView.hidden = false
         loadTable()
     }
@@ -43,6 +50,13 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
         destroyTimer()
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToSearch" {
+            let controller: AddToPlaylistController = segue.destinationViewController as! AddToPlaylistController
+            controller.playList = playList
+        }
+    }
+    
     func createTimer() {
         if timer == nil {
             NSLog("Timer Started")
@@ -79,39 +93,95 @@ class GuestPlaylistController : UIViewController, ParseServiceDelegate,
     
     func onPlaylistRetrievedSuccess(playList: Playlist) {
         self.playList = playList
-        AppDelegate.currentPlayListId = playList.objectId
         self.navigationItem.title = "Code: \(playList.code!)"
         parseService?.getPlaylistItemsForPlaylist(self.playList!.objectId!)
     }
     
     func onPlaylistItemsRetrieved(playlistItems: [PlaylistItem]) {
-        self.playListItems = playlistItems
+        self.playListItems = playlistItems;
         self.findingPartyView.hidden = true
         self.tableView.hidden = false
+        self.addVideoButton.hidden = false
         self.tableView.reloadData()
         createTimer()
     }
     
+    // UITableView Delegate and Datasource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: PlayListItemTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("playlistItemTableViewCells") as! PlayListItemTableViewCell
-        if(likedItems.contains(playListItems![indexPath.row].objectId!)) {
-            playListItems![indexPath.row].liked = true
+        
+        if(indexPath.section == 0) {
+            let cell: CurrentlyPlayingItemTableViewCell =
+                self.tableView.dequeueReusableCellWithIdentifier("currentlyPlayingTableViewCell") as! CurrentlyPlayingItemTableViewCell
+            let item = itemForIndexPath(indexPath)
+            cell.playListItem = item
+            return cell
         }
-        cell.playListItem = playListItems![indexPath.row]
+        
+        let cell: PlayListItemTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("playlistItemTableViewCells") as! PlayListItemTableViewCell
+        let item = itemForIndexPath(indexPath)
+        if(likedItems.contains(item.objectId!)) {
+            item.liked = true
+        }
+        cell.playListItem = item
         cell.delegate = self
         return cell
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell: PlayListHeaderCell = self.tableView.dequeueReusableCellWithIdentifier("playlistHeader") as! PlayListHeaderCell
+        if section == 0 {
+            cell.setTitle("On Now")
+        } else {
+            cell.setTitle("Up Next")
+        }
+        return cell;
+    }
+    
+    func itemForIndexPath(indexPath: NSIndexPath) -> PlaylistItem {
+        if indexPath.section == 0  {
+            return playListItems![0]
+        } else {
+            return playListItems![indexPath.row + 1]
+        }
+    }
+    
+//    func saveLikes(playListItemObjectId : String) {
+//        let data =  NSUserDefaults.standardUserDefaults()
+//        var likes: NSArray = data.arrayForKey("likes") as? NSA
+//        if(likes == nil) {
+//            likes = NSArray()
+//        }
+//        
+//            likes.append(<#T##newElement: AnyObject##AnyObject#>)
+//        }
+//        
+//        data.setValue(<#T##value: AnyObject?##AnyObject?#>, forKey: "liked")
+//    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30;
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 64;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playListItems?.count ?? 0
+        if playListItems?.count > 0 {
+            switch section {
+                case 0:
+                    return 1;
+                case 1:
+                    return (playListItems?.count)! - 1
+                default:
+                    return 0
+            }
+        }
+        return 0
     }
     
     func likeButtonTapped(playListItem: PlaylistItem) {

@@ -24,6 +24,8 @@
 		4707F7E51BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4707F7E91BD9E1DD008E3EC6 /* UIColor+Rev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7E81BD9E1DD008E3EC6 /* UIColor+Rev.swift */; settings = {ASSET_TAGS = (); }; };
 		4707F7EB1BD9E2C4008E3EC6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		47D796F71BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D796F61BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		47D796F91BDAA22A004FA817 /* PlayListHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D796F81BDAA22A004FA817 /* PlayListHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
 		651C7D7E356B686844797E51 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E9215FB639FFB1ECF17A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeResultTableViewCell.swift; sourceTree = "<group>"; };
 		4707F7E81BD9E1DD008E3EC6 /* UIColor+Rev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Rev.swift"; sourceTree = "<group>"; };
 		4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		47D796F61BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyPlayingTableViewCell.swift; sourceTree = "<group>"; };
+		47D796F81BDAA22A004FA817 /* PlayListHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayListHeaderCell.swift; sourceTree = "<group>"; };
 		546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,13 +166,12 @@
 		4707F7D31BD95FFB008E3EC6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				47D796F51BDA9C3C004FA817 /* cells */,
 				4707F7A41BD95677008E3EC6 /* Main.storyboard */,
 				4707F7A71BD95677008E3EC6 /* Assets.xcassets */,
 				4707F7A91BD95677008E3EC6 /* LaunchScreen.storyboard */,
 				4707F7D71BD96FBE008E3EC6 /* GuestPlaylistController.swift */,
-				4707F7D91BD98459008E3EC6 /* PlaylistItemTableViewCell.swift */,
 				4707F7E01BD9AB9D008E3EC6 /* AddToPlaylistController.swift */,
-				4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */,
 				4707F7EA1BD9E2C4008E3EC6 /* WelcomeViewController.swift */,
 			);
 			name = UI;
@@ -190,6 +193,17 @@
 				4707F7DB1BD98C9F008E3EC6 /* ImageLoader.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		47D796F51BDA9C3C004FA817 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				4707F7E41BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift */,
+				4707F7D91BD98459008E3EC6 /* PlaylistItemTableViewCell.swift */,
+				47D796F61BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift */,
+				47D796F81BDAA22A004FA817 /* PlayListHeaderCell.swift */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 		DE32B8EB16263E72803091CF /* Pods */ = {
@@ -266,6 +280,7 @@
 		4707F7931BD95676008E3EC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Alan Baker";
 				TargetAttributes = {
@@ -383,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4707F7DC1BD98C9F008E3EC6 /* ImageLoader.swift in Sources */,
+				47D796F71BDA9C8E004FA817 /* CurrentlyPlayingTableViewCell.swift in Sources */,
 				4707F7E91BD9E1DD008E3EC6 /* UIColor+Rev.swift in Sources */,
 				4707F7DE1BD9A87D008E3EC6 /* YoutubeSearchService.swift in Sources */,
 				4707F7DA1BD98459008E3EC6 /* PlaylistItemTableViewCell.swift in Sources */,
@@ -390,6 +406,7 @@
 				4707F7D21BD95FA2008E3EC6 /* ParseService.swift in Sources */,
 				4707F7EB1BD9E2C4008E3EC6 /* WelcomeViewController.swift in Sources */,
 				4707F79F1BD95677008E3EC6 /* AppDelegate.swift in Sources */,
+				47D796F91BDAA22A004FA817 /* PlayListHeaderCell.swift in Sources */,
 				4707F7E31BD9ADFB008E3EC6 /* YoutubeSearchResult.swift in Sources */,
 				4707F7E51BD9B7E4008E3EC6 /* YouTubeResultTableViewCell.swift in Sources */,
 				4707F7E11BD9AB9D008E3EC6 /* AddToPlaylistController.swift in Sources */,

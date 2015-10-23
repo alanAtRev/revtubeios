@@ -17,7 +17,6 @@ class PlayListItemTableViewCell : UITableViewCell {
     
     @IBOutlet var videoThumbnailImageView: UIImageView!
     @IBOutlet var videoTitleLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
     @IBOutlet var likesLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
@@ -36,7 +35,6 @@ class PlayListItemTableViewCell : UITableViewCell {
             } else {
                 durationText += "\(playListItem!.videoDuration! % 60)"
             }
-            durationLabel.text = durationText
             likesLabel.text = "\(playListItem!.likes!) likes"
             
             if(playListItem!.liked) {
