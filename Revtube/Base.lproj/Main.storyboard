@@ -223,13 +223,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pw-M3-n4p" userLabel="LoadingView">
                                 <rect key="frame" x="180" y="257" width="240" height="87"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-hQ-ppd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-hQ-ppd">
                                         <rect key="frame" x="8" y="8" width="240" height="74"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding Party..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnM-xS-kJF">
-                                                <rect key="frame" x="63" y="8" width="114" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding Party..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnM-xS-kJF">
+                                                <rect key="frame" x="56" y="8" width="128" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="113.5" id="Q9X-OP-9mz"/>
+                                                    <constraint firstAttribute="width" constant="128" id="Q9X-OP-9mz"/>
                                                     <constraint firstAttribute="height" constant="20.5" id="Rsp-Nf-5kS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -473,7 +473,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search For a Video " textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-gc-nCG">
-                                <rect key="frame" x="0.0" y="64" width="473" height="40"/>
+                                <rect key="frame" x="4" y="64" width="469" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="on6-TC-SHc"/>
                                 </constraints>
@@ -505,7 +505,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Best Music Video Ever" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JK-gl-ImK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Best Music Video Ever" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="3JK-gl-ImK">
                                                     <rect key="frame" x="104" y="20" width="420" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -567,7 +567,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d0z-gc-nCG" firstAttribute="leading" secondItem="zN8-eb-svo" secondAttribute="leadingMargin" constant="-20" id="1oW-od-kmU"/>
+                            <constraint firstItem="d0z-gc-nCG" firstAttribute="leading" secondItem="zN8-eb-svo" secondAttribute="leadingMargin" constant="-16" id="1oW-od-kmU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YGt-0i-Qh0" secondAttribute="trailing" constant="-20" id="BGl-Pk-Rsl"/>
                             <constraint firstItem="lyh-Fp-46u" firstAttribute="leading" secondItem="d0z-gc-nCG" secondAttribute="trailing" id="GSd-Jk-wa5"/>
                             <constraint firstItem="YGt-0i-Qh0" firstAttribute="top" secondItem="d0z-gc-nCG" secondAttribute="bottom" id="H0t-x8-1qB"/>

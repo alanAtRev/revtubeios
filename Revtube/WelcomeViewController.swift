@@ -8,9 +8,19 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var codeField: UITextField!
+    
+    override func viewDidLoad() {
+        codeField.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        onJoinButtonTapped(textField)
+        codeField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func onJoinButtonTapped(sender: AnyObject) {
         if codeField.text!.characters.count > 0 {
