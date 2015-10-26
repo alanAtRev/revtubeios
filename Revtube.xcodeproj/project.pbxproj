@@ -289,6 +289,7 @@
 				TargetAttributes = {
 					4707F79A1BD95676008E3EC6 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = PZUHREJP8B;
 					};
 					4707F7B01BD95677008E3EC6 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -559,11 +560,14 @@
 			baseConfigurationReference = EAE92644FE276F2021ADAB0E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Revtube/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
 				PRODUCT_NAME = "Party Tube";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -573,11 +577,14 @@
 			baseConfigurationReference = 546995CCFCC7187E02AA4314 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Revtube/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rev.Revtube;
 				PRODUCT_NAME = "Party Tube";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
